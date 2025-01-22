@@ -11,5 +11,25 @@ const agregarAmigo = () => {
     }
 
     document.getElementById('amigo').value = '';
+
+    actualizarListaDeAmigos();
 }
 
+document.getElementById('amigo').addEventListener('keydown', (event) => {
+    if(event.key === "Enter"){
+        agregarAmigo();
+    }
+})
+
+function actualizarListaDeAmigos() {
+    let listaAmigos = document.getElementById('listaAmigos');
+
+    listaAmigos.innerHTML = '';
+
+    for(i = 0; i < amigos.length; i++){
+        let elementoListaAmigo = document.createElement('li');
+        elementoListaAmigo.innerHTML = `${amigos[i]}`;
+        listaAmigos.appendChild(elementoListaAmigo);
+    }
+
+}
