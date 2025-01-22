@@ -13,11 +13,13 @@ const agregarAmigo = () => {
     document.getElementById('amigo').value = '';
 
     actualizarListaDeAmigos();
+    return;
 }
 
 document.getElementById('amigo').addEventListener('keydown', (event) => {
     if(event.key === "Enter"){
         agregarAmigo();
+        return;
     }
 })
 
@@ -31,5 +33,19 @@ function actualizarListaDeAmigos() {
         elementoListaAmigo.innerHTML = `${amigos[i]}`;
         listaAmigos.appendChild(elementoListaAmigo);
     }
+    return;
+}
 
+function sortearAmigo(){
+    if(amigos.length === 0){
+        return alert('Debes agregar amigos a la lista');
+    }else{
+        let amigoSecreto = 0;
+        let resultado = document.getElementById('resultado');
+        for(i = 0; i < amigos.length; i++){
+            amigoSecreto = Math.floor(Math.random () * amigos.length);
+            resultado.innerHTML = amigos[amigoSecreto];
+        }
+        return;
+    }
 }
