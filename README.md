@@ -13,6 +13,7 @@
 
 # Proximas mejoras
 - Editar y eliminar amigos
+- Interfaz responsiva
 
 # Tecnologias 
 - JavaScript
